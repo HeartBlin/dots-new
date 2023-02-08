@@ -1,0 +1,171 @@
+[
+    {
+        "name": "topBar",
+        "position": "top",
+        "layer": "top",
+        "height": 34,
+        "margin-top": 0,
+        "margin-left": 0,
+        "modules-left": [
+            "custom/logoDisk",
+            "disk",
+            "custom/separator",
+            "custom/logoMemory",
+            "memory"
+        ],
+        "modules-center": [
+            "clock"
+        ],
+        "modules-right": [
+            "custom/logoNetwork",
+            "network",
+            "custom/separator",
+            "custom/power"
+        ],
+
+        "clock": {
+            "format-alt": ":{%H:%M}" 
+        },
+
+        "custom/logoDisk": {
+            "format": "<span font_desc='Material Icons'></span>  "
+        },
+
+        "disk": {
+            "interval": 30,
+            "format": "{percentage_used}%",
+            "path": "/"
+        },
+
+        "custom/separator": {
+            "format": "|"
+        },
+
+        "memory": {
+            "interval": 30,
+            "format": "{percentage}%",
+            "max-length": 10
+        },
+
+        "custom/logoMemory": {
+            "format": "<span font_desc='Material Icons'></span>  "
+        },
+
+        "network": {
+            "interface": "wlp3s0",
+            "format": "{ifname}",
+            "format-wifi": "{essid}",
+            "format-disconnected": "wlp3s0 disconnected",
+            "tooltip-format": "{ifname} via {gwaddr} ",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} ",
+            "tooltip-format-disconnected": "Disconnected",
+            "max-length": 50
+        },
+
+        "custom/logoNetwork": {
+            "format": "<span font_desc='Material Icons'></span> "
+        },
+
+        "custom/power": {
+            "format": "⏻",
+            "on-click": "alacritty -e $HOME/.config/waybar/scripts/power.sh"
+        }
+    },
+
+    {
+        "name": "bottomBar",
+        "position": "bottom",
+        "layer": "top",
+        "height": 34,
+        "width": 1500,
+        "modules-left": [
+            "custom/logoBrightness",
+            "backlight",
+            "custom/separator",
+            "hyprland/window",
+            "custom/separator",
+            "hyprland/language"
+        ],
+        "modules-center": [
+            "wlr/workspaces"
+        ],
+
+        "modules-right": [
+            "tray",
+            "custom/separator",
+            "custom/logoWireplumber",
+            "wireplumber",
+            "custom/separator",
+            "custom/logoBattery",
+            "battery"
+        ],
+
+        "custom/logoBrightness": {
+            "format": "<span font_desc='Material Icons'></span> "
+        },
+
+        "backlight": {
+            "device": "amdgpu_bl1",
+            "format": "{percent}%"
+        },
+
+        "custom/separator": {
+            "format": "|"
+        },
+
+        "hyprland/window": {
+            "format": "{}",
+            "max-length": 30,
+	    "rewrite": {
+		"": "No active window"
+	    }
+        },
+
+        "hyprland/language": {
+            "format": "{}"
+        } ,
+
+        "wlr/workspaces": {
+            "format": "{icon}",
+            "on-click": "activate",
+            "format-icons": {
+              "1": "一",
+              "2": "二",
+              "3": "三",
+              "4": "四",
+              "5": "五",
+              "6": "六",
+              "7": "七",
+              "8": "八",
+              "9": "九",
+              "0": "十"
+            },
+            "sort-by-number": true
+        },
+
+        "custom/logoWireplumber": {
+            "format":"<span font_desc='Material Icons'></span> "
+        },
+
+        "wireplumber": {
+            "format": "{volume}%",
+            "format-muted": "0%"
+        },
+
+        "custom/logoBattery": {
+            "format":"<span font_desc='Material Icons'></span> "
+        },
+
+        "battery": {
+            "bat": "BAT0",
+            "interval": 60,
+            "format": "{capacity}%"
+        },
+
+        "tray": {
+            "icon-size": 15,
+            "spacing": 10
+        }
+    }
+]
