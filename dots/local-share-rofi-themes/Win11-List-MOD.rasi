@@ -1,0 +1,107 @@
+// Credits to lr-tech for making the theme.
+// Colors were changed from the windows11-list-dark theme to gruvbox-type colors.
+// Link to lr-tech's repo: https://github.com/lr-tech/rofi-themes-collection
+
+* {
+  font: "Roboto 10";
+
+  bg0    : #282828;
+  bg1    : #1d2021ef;
+  bg2    : #3c3836;
+  bg3    : #3c3836;
+  fg0    : #fbf1c7;
+  fg1    : #fbf1c7;
+  accent : #8ec07c;
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location : south;
+  width    : 580px;
+  height   : 600px;
+  y-offset : -20px;
+
+  background-color : @bg1;
+  border-radius    : 8px;
+}
+
+mainbox {
+  padding : 24px;
+  spacing : 24px;
+}
+
+inputbar {
+  padding          : 8px;
+  spacing          : 4px;
+  children         : [ icon-search, entry ];
+  border           : 0 0 2px 0 solid;
+  border-color     : @accent;
+  border-radius    : 2px;
+  background-color : @bg0;
+}
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 24px;
+}
+
+entry {
+  font              : "Roboto 12";
+  placeholder       : "Type here to search";
+  placeholder-color : @fg1;
+}
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @bg2;
+}
+
+listview {
+  columns       : 2;
+  spacing       : 8px;
+  fixed-height  : true;
+  fixed-columns : true;
+}
+
+element {
+  spacing       : 1em;
+  padding       : 8px;
+  border-radius : 2px;
+}
+
+element normal urgent {
+}
+
+element normal active {
+  text-color: @accent;
+}
+
+element selected {
+  background-color: @bg3;
+}
+
+element selected urgent {
+}
+
+element-icon {
+  size: 1.5em;
+}
+
+element-text {
+  text-color: inherit;
+}
